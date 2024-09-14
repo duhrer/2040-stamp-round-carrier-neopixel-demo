@@ -38,4 +38,4 @@ By default, the RP2040 stamp has MicroPython installed. This supports a software
 
 ### Drag and Drop
 
-When the device is ready to be reprogrammed, you should see a USB drive for the device. Drag the compiled UF2 file onto the USB drive to install the program. You'll know this is complete when the startup power check (see above) starts, and when the USB drive disappears.
+When the device is ready to be reprogrammed, you should see a USB drive for the device. Drag the compiled UF2 file onto the USB drive to install the program. You'll know this is complete when the USB drive disappears and the lights start flashing.
