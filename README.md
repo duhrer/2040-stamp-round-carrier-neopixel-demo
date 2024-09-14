@@ -2,7 +2,7 @@
 
 This project is a demonstration of the [RP2040 Stamp](https://lectronz.com/products/rp2040-stamp) mounted on a [round carrier](https://lectronz.com/products/rp2040-stamp-round-carrier).
 
-[Link to YouTube Video]
+You can see a demonstration of this project [On my YouTube Channel](https://youtu.be/RtAe4qzLVxg?si=iUJfAAIeLWWjr16N),
 
 ## What does it do?
 
