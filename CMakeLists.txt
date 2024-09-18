@@ -26,6 +26,7 @@ target_link_libraries(
     ${NAME}
     pico_stdlib
     pico_neopixel
+    pico_bootsel_via_double_reset
 )
 
 # create map/bin/hex file etc.
