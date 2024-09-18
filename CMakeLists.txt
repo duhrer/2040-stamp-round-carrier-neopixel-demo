@@ -29,6 +29,9 @@ target_link_libraries(
     pico_bootsel_via_double_reset
 )
 
+# By linking the reset library, we add support for entering "bootsel" mode by pressing reset twice.
+# See: https://github.com/raspberrypi/pico-sdk/blob/develop/src/rp2_common/pico_bootsel_via_double_reset/pico_bootsel_via_double_reset.c#L32
+
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${NAME})
 
