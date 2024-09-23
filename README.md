@@ -30,14 +30,19 @@ Adjust the last line for the number of cores you have available.  You should the
 
 ## Installing
 
-### Preparing for Installation
+### `bootsel` Mode
 
-By default, the RP2040 stamp has MicroPython installed. This supports a software reset, where pressing the reset button twice readies the stamp for reprogramming. Once you have reprogrammed the device, it no longer supports this type of reprogramming. Instead, you'll have to:
+The easiest way to reprogram the device is to enter `bootsel` mode. In `bootsel` mode, the device appears as a USB drive and will install any firmware (UF2 file) copied or dragged onto it.  It will then restart and run the uploaded code.
+
+### Using the Reset Button
+
+By default, the RP2040 stamp has MicroPython installed.  Pressing the reset button twice in quick sucession will enter `bootsel` mode. This project uses [the same underlying feature of the Pico SDK](https://github.com/raspberrypi/pico-sdk/blob/6500c59d704ed2bb26d44b2a0ac7151d35287fdb/src/rp2_common/pico_bootsel_via_double_reset/pico_bootsel_via_double_reset.c#L32,), and also supports pressing reset twice to enter `bootsel` mode.
+
+### Using the `bootsel` Pin on the Stamp 
+
+If that doesn't work for you for any reason, you can also manually enter bootsel mode using the `bootsel` pin on the underside of the stamp:
 
 1. Power on the device.
-2. Connect the `bootsel` and `ground` connections on the rear of the device.
-3. Press the `reset` button on the front of the device.
-
-### Drag and Drop
-
-When the device is ready to be reprogrammed, you should see a USB drive for the device. Drag the compiled UF2 file onto the USB drive to install the program. You'll know this is complete when the USB drive disappears and the lights start flashing.
+2. Connect the `bootsel` and `ground` connections on the rear of the device (for example, using an alligator clip).
+3. While `bootsel` is still connected to `ground`, press the `reset` button on the front of the device.
+4. The device will stop running the current code and a USB Drive should appear.
