@@ -6,9 +6,11 @@ You can see a demonstration of this project [On my YouTube Channel](https://yout
 
 ## What does it do?
 
-In normal operation, the device models three coloured dots. One dot is solid red, another solid green, and the last solid blue. Each dot rotates around the center and varies in intensity. When two dots overlap, their colours are merged. The speed at which the dots rotate also varies over time.
+In normal operation, the device models three coloured dots, each surrounded by a "band" of its own colour. One dot is solid red, another solid green, and the last solid blue. Each dot rotates around the center and varies in intensity. When two dots overlap, their colours are merged. The speed at which the dots rotate also varies over time.
 
 Periodically, all three dots will overlap, and there will be a single white light.  Most of the time, there will be blends of constantly changing colours.
+
+The brightness of the lights is half of the maximum by default.  This can be changed using the "user buttons" on the round carrier (these are next to the battery connector). The brightness can be adjusted to one of 16 levels. `D14` turns the brightness down, and `D15` turns the brightness up.  When holding either button, the current brightness level is displayed.  All light are lit when at maximum brightness, one light is lit when at minimum brightness.
 
 ## Building
 
