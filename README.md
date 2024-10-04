@@ -6,11 +6,29 @@ You can see a demonstration of this project [On my YouTube Channel](https://yout
 
 ## What does it do?
 
-In normal operation, the device models three coloured dots, each surrounded by a "band" of its own colour. One dot is solid red, another solid green, and the last solid blue. Each dot rotates around the center and varies in intensity. When two dots overlap, their colours are merged. The speed at which the dots rotate also varies over time.
+This repository can be use to build a handful of programs to manipulate the ring of NeoPixels on the RP2040 Stamp Round Carrier.
 
-Periodically, all three dots will overlap, and there will be a single white light.  Most of the time, there will be blends of constantly changing colours.
+All programs start with the brightness of the lights at half of the maximum. This can be changed using the "user buttons" on the round carrier (these are next to the battery connector). The brightness can be adjusted to one of 16 levels. `D14` turns the brightness down, and `D15` turns the brightness up. When holding either button, the current brightness level is displayed. All lights are lit when at maximum brightness, one light is lit when at minimum brightness.
 
-The brightness of the lights is half of the maximum by default.  This can be changed using the "user buttons" on the round carrier (these are next to the battery connector). The brightness can be adjusted to one of 16 levels. `D14` turns the brightness down, and `D15` turns the brightness up.  When holding either button, the current brightness level is displayed.  All light are lit when at maximum brightness, one light is lit when at minimum brightness.
+### Tri-Band
+
+There are three coloured bands (red, green, and blue). The center at band displays the colour at the maximum intensity for the brightness level. The same colour is spread to surrounding lights, and fades based on the distance from the centre. Where more than one band overlaps, the colours are mixed.  Each band rotates around the center. Periodically, all three dots will overlap, and there will be a single white light.  Most of the time, there will be blends of constantly changing colours.
+
+This program is packaged up as `tri-band.uf2`, which you can install using bootsel mode (see below).
+
+### Dual-Band
+
+There are two coloured bands.  Their colour rotates through the spectrum over time.  Each band is the polar opposite of the other, i.e. when one band is orange, the other is blue.
+
+This program is packaged up as `dual-band.uf2`, which you can install using bootsel mode (see below).
+
+
+### Solid Colour Wheel
+
+All lights are the same colour.  The colour rotates through the spectrum over time. Each band rotates around the center at the same speed.
+
+This program is packaged up as `colour-wheel.uf2`, which you can install using bootsel mode (see below).
+
 
 ## Building
 
@@ -32,7 +50,7 @@ Adjust the last line for the number of cores you have available.  You should the
 
 ### `bootsel` Mode
 
-The easiest way to reprogram the device is to enter `bootsel` mode. In `bootsel` mode, the device appears as a USB drive and will install any firmware (UF2 file) copied or dragged onto it.  It will then restart and run the uploaded code.
+The easiest way to reprogram the device is to enter `bootsel` mode. In `bootsel` mode, the device appears as a USB drive and will install a firmware (UF2 file) copied or dragged onto it.  It will then restart and run the uploaded code.
 
 ### Using the Reset Button
 
